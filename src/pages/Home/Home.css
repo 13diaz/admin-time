@@ -1,0 +1,24 @@
+.Home {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons {
+  height: 10vh;
+  width: 30vh;
+}
+
+.countersInput {
+  width: 22vh;
+  text-align: center;
+  font-size: xx-large;
+  border-color: darkslategray;
+}
+
+.btnStart {
+  width: 50vh;
+}
