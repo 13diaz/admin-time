@@ -1,6 +1,5 @@
 import "./App.css";
 import Home from "./pages/Home/Home.js";
-import CountersTabs from "./pages/CountersTabs/CountersTabs";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/countersTabs" element={<CountersTabs />} />
+          <Route path="/Home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
