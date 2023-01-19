@@ -1,24 +1,34 @@
-.Home {
+.home {
+  margin: 0%;
+  padding: 0% 3%;
+  height: 100%;
   width: 100%;
-  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border: 1px solid #ede20a;
 }
 
-.buttons {
-  height: 10vh;
-  width: 30vh;
+.main {
+  height: 100%;
+  width: 100%;
+  padding: 0% 3%;
+  margin: 0%;
+  border: 1px solid #1637dd;
+  position: relative;
 }
 
-.countersInput {
-  width: 22vh;
-  text-align: center;
-  font-size: xx-large;
-  border-color: darkslategray;
+.createCounterButton {
+  margin: 0% auto;
+  padding: 0% auto;
+  font-size: xx-large; 
+  text-decoration: none;
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
 }
 
-.btnStart {
-  width: 50vh;
+.modalCounterConfiguration {
+  border: 1px solid #dd1616;
 }

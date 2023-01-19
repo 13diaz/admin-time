@@ -1,7 +1,10 @@
 .App {
   margin: 0;
-  padding: 7vh 0 3vh 0;
+  padding: 3vh 1vh 1vh 1vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
-  min-height: 100vh;
   font-size: calc(10px + 2vmin);
 }
