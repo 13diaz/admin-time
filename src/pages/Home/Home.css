@@ -7,7 +7,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #ede20a;
 }
 
 .main {
@@ -15,7 +14,6 @@
   width: 100%;
   padding: 0% 3%;
   margin: 0%;
-  border: 1px solid #1637dd;
   position: relative;
 }
 
@@ -29,6 +27,82 @@
   bottom: 3%;
 }
 
-.modalCounterConfiguration {
-  border: 1px solid #dd1616;
+.headerModalCounterConfig {
+  margin: 0%;
+  padding: 0% 5% 0% 1%;
 }
+
+.modalTitle {
+  padding: 0%;
+  margin: 0% 3% 0% 0%;
+  width: 100%;
+}
+
+.inputCounterTitle {
+  margin: 0%;
+  padding: 1% 0%;
+}
+
+.bodyModalCounterConfig {
+  margin: 0%;
+  padding: 0% 3%;
+}
+
+.subtitleCounterConfig {
+  font-size: larger;
+  min-width: 100%;
+  text-align: center;
+}
+
+.rowTimerInputs {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.colSecondsInput {
+  margin: 0%;
+  padding: 1% 0%;
+  width: 50%;
+}
+
+.footerModalCounterConfig {
+  margin: 0%;
+  padding: 0%;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rowFooter {
+  margin: 0%;
+  padding: 0%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.colTextFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0%;
+  padding: 1% 1% 0% 1%;
+}
+
+.colSaveButtonFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0%;
+  padding: 1%;
+}
+
+/* border: 1px solid rgb(242, 255, 0);
+border: 1px solid blue;
+border: 1px solid red; */

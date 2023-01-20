@@ -1,15 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "./Home.css";
+// import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+// import Tab from "react-bootstrap/Tab";
+import "./Home.css";
 import { useState } from "react";
 // import { useLocalStorage } from "../../hooks/useLocalStorage";
 // import { Link } from "react-router-dom";
 
-function Home() {
-  // const [counters, setCounters] = useLocalStorage("numOfCounters", 1);
+function Home() {  
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -38,31 +42,92 @@ function Home() {
   /* LO SIGUIENTE ES CREAR UNA FUNCION QUE RECIBA EL CONTADOR DEL MODAL,
   LO MUESTRE EN LA SECTION DEL MAIN ORGANIZADOS PREFERIBLEMENTE COMO LISTOFGRUPS */
 
+  const [counters, setCounters] = useState([]);
+
+  const saveCounter = () => {
+    // AQUI RECOGER CADA UNO DE LOS VALUES DE LOS INPUTS Y UNIRLOS PARA PUSHEARLOS EN EL ARRAY DE COUNTERS
+    console.log("saveFree");
+  };
+
   return (
     <div className="home">
       <p>Select the number of counters you want to have:</p>
       <div className="main">
-
         {/* Modal for configurate counters */}
-        <Modal className="modalCounterConfiguration"
+        <Modal
           show={show}
           onHide={handleClose}
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
         >
-          <Modal.Header closeButton>
-            <Modal.Title>
-              <Form.Group className="mb-3" controlId="formTitle">
-                <Form.Control type="text" plaintext placeholder="Counter title" />
-              </Form.Group>
+          <Modal.Header closeButton className="headerModalCounterConfig">
+            <Modal.Title className="modalTitle">
+              <Form.Control
+                type="text"
+                autoFocus
+                plaintext
+                placeholder="Counter Title"
+                className="inputCounterTitle"
+              />
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>AQUI VA EL FORM PARA INGRESAR EL TIEMPO DEL CONTADOR</Modal.Body>
-          <Modal.Footer>
-            <Button variant="success" onClick={handleClose}>
-              Save
-            </Button>
+          <Modal.Body className="bodyModalCounterConfig">
+            <Form.Label className="subtitleCounterConfig">
+              Config your timer
+            </Form.Label>
+            <Row className="rowTimerInputs">
+              <Col sm={12}>
+                <InputGroup>
+                  <Form.Control
+                    type="number"
+                    max="9999"
+                    placeholder="00"
+                    aria-label="counterHours"
+                    aria-describedby="counterHours"
+                  />
+                  <InputGroup.Text id="counterHours">Hrs</InputGroup.Text>
+                  <Form.Control
+                    type="number"
+                    max="9999"
+                    placeholder="00"
+                    aria-label="counterMinutes"
+                    aria-describedby="counterMinutes"
+                  />
+                  <InputGroup.Text id="counterMinutes">Min</InputGroup.Text>
+                </InputGroup>
+              </Col>
+              <Col sm={4} className="colSecondsInput">
+                <InputGroup>
+                  <Form.Control
+                    type="number"
+                    max="9999"
+                    placeholder="00"
+                    aria-label="counterSeconds"
+                    aria-describedby="counterSeconds"
+                  />
+                  <InputGroup.Text id="counterSeconds">Sec</InputGroup.Text>
+                </InputGroup>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer className="footerModalCounterConfig">
+            <Row className="rowFooter">
+              <Col sm={10} className="colTextFooter">
+                <p className="text-muted textFooter">
+                  You can go back in this configuration
+                </p>
+              </Col>
+              <Col sm={2} className="colSaveButtonFooter">
+                <Button
+                  variant="success"
+                  onClick={saveCounter}
+                  className="saveCounterButton"
+                >
+                  Save
+                </Button>
+              </Col>
+            </Row>
           </Modal.Footer>
         </Modal>
 
@@ -76,7 +141,6 @@ function Home() {
           <i className="bi bi-plus-lg"></i>
         </Button>
       </div>
-      <p className="text-muted">You can go back in this configuration</p>
     </div>
   );
 }
