@@ -1,33 +1,31 @@
-.home {
-  margin: 0%;
-  padding: 0% 3%;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
+  /* border: 1px solid rgb(242, 255, 0); */
+  /* border: 1px solid blue; */
+  /* border: 1px solid red; */
 
 .main {
-  height: 100%;
-  width: 100%;
-  padding: 0% 3%;
   margin: 0%;
-  position: relative;
+  padding: 0%;
+  max-height: 87vh;
+  border: 1px solid #02b875;
+  border-radius: 1%;
+  overflow: auto;
 }
 
-.createCounterButton {
+
+/* BUTTON FOR CREATE A NEW TIMER */
+.createTimerButton {
   margin: 0% auto;
   padding: 0% auto;
-  font-size: xx-large; 
+  font-size: xx-large;
   text-decoration: none;
-  position: absolute;
+  position: fixed;
   right: 3%;
   bottom: 3%;
 }
 
-.headerModalCounterConfig {
+/* MODAL FOR CONFIGURATE NEW TIMER */
+
+.headerModalTimerConfig {
   margin: 0%;
   padding: 0% 5% 0% 1%;
 }
@@ -38,17 +36,17 @@
   width: 100%;
 }
 
-.inputCounterTitle {
+.inputTimerTitle {
   margin: 0%;
   padding: 1% 0%;
 }
 
-.bodyModalCounterConfig {
+.bodyModalTimerConfig {
   margin: 0%;
   padding: 0% 3%;
 }
 
-.subtitleCounterConfig {
+.subtitleTimerConfig {
   font-size: larger;
   min-width: 100%;
   text-align: center;
@@ -68,7 +66,7 @@
   width: 50%;
 }
 
-.footerModalCounterConfig {
+.footerModalTimerConfig {
   margin: 0%;
   padding: 0%;
   min-height: 100%;
@@ -102,7 +100,3 @@
   margin: 0%;
   padding: 1%;
 }
-
-/* border: 1px solid rgb(242, 255, 0);
-border: 1px solid blue;
-border: 1px solid red; */

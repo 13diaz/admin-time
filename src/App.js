@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <h1>Admin Time App</h1>
+      <h1 className="titleApp">Admin Time App</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
