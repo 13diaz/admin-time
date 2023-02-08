@@ -1,0 +1,28 @@
+.listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.listItem:hover {
+  background-color: rgb(238, 229, 229);
+  opacity: 1;
+}
+
+.timerLink{
+  text-decoration: none;
+}
+
+.timerLink:hover{
+  color: #02b875;
+}
+
+.titleTimer {
+  font-size: larger;
+  margin: 0%;
+}
+
+.timerPreview {
+  margin: 0%;
+  padding: 0% 1%;
+}

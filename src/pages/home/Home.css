@@ -3,11 +3,10 @@
   /* border: 1px solid red; */
 
 .main {
-  margin: 0%;
-  padding: 0%;
-  max-height: 87vh;
+  margin: 1%;
+  padding: 1%;
   border: 1px solid #02b875;
-  border-radius: 1%;
+  border-radius: 2%;
   overflow: auto;
 }
 

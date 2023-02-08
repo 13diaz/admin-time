@@ -1,15 +1,18 @@
 import "./App.css";
-import Home from "./pages/Home/Home.js";
+import Home from "./pages/home/Home.js";
+import TimersDetails from "./pages/timersDetails/TimersDetails.js";
+import NotFound from "./pages/notFound/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="titleApp">Admin Time App</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/timersDetails/:timerId" element={<TimersDetails />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

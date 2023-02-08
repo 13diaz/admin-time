@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import HeaderApp from "../../components/headerApp/HeaderApp.js";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import { FormGroup } from "react-bootstrap";
@@ -10,7 +11,7 @@ import Row from "react-bootstrap/Row";
 import "./Home.css";
 import { useState } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
-import ListTimersPreview from "../../components/ListTimersPreview";
+import ListTimersPreview from "../../components/listTimersPreview/ListTimersPreview";
 
 // refactor if needed in more components
 
@@ -20,34 +21,39 @@ function Home() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [idTimer, setIdTimer] = useState(1);
+  const [timers, setTimers] = useLocalStorage("timers", []);
   const [titleTimer, setTitleTimer] = useState("");
   const [hoursTimer, setHoursTimer] = useState("");
   const [minutesTimer, setMinutesTimer] = useState("");
   const [secondsTimer, setSecondsTimer] = useState("");
-  const [timers, setTimers] = useLocalStorage("timers", []);
 
   const saveTimer = (e) => {
-    setIdTimer(idTimer + 1);
-    const newTitleTimer = titleTimer || "Timer" + idTimer;
-    const newHoursTimer = hoursTimer || 0;
-    const newMinutesTimer = minutesTimer || 0;
-    const newSecondsTimer = secondsTimer || 0;
+    const newIdTimer =
+      timers.length === 0 ? 1 : timers[timers.length - 1].id + 1;
+    const newTitleTimer = parseInt(titleTimer) || "Timer" + newIdTimer;
+    const newHoursTimer = parseInt(hoursTimer) || "00";
+    const newMinutesTimer = parseInt(minutesTimer) || "00";
+    const newSecondsTimer = parseInt(secondsTimer) || "00";
     const newTimer = {
-      id: idTimer,
+      id: newIdTimer,
       title: newTitleTimer,
       hours: newHoursTimer,
       minutes: newMinutesTimer,
       seconds: newSecondsTimer,
     };
     setTimers([...timers, newTimer]);
-    
+    setTitleTimer("");
+    setHoursTimer("");
+    setMinutesTimer("");
+    setSecondsTimer("");
+
     handleClose();
     e.preventDefault();
   };
 
   return (
     <div className="main">
+      <HeaderApp />
       <ListTimersPreview props={timers} />
       {/* Modal for configurate timers */}
       <Modal
@@ -68,7 +74,10 @@ function Home() {
                   placeholder="Timer Title"
                   className="inputTimerTitle"
                   value={titleTimer}
-                  onChange={(e) => setTitleTimer(e.target.value)}
+                  onChange={(e) => {
+                    setTitleTimer(e.target.value);
+                    e.target.value = "";
+                  }}
                 />
               </FormGroup>
             </Modal.Title>
@@ -144,6 +153,8 @@ function Home() {
           </Modal.Footer>
         </Form>
       </Modal>
+      {/* MOSTRAR UNA ALERTA COMO MODAL PARA ADVERTIR QUE NO SE PERMITE CREAR CONTADORES EN 0,
+      PERO TAMBIEN SE PUEDE DEJAR COMO OPCION LA MODIFICACION DESDE LOS TABS DE ESOS TIMERS CUANDO EL USUARIO LO DESEE ESTA ES LA MEJOR OPCION */}
       {/* Button for create new timer */}
       <Button
         onClick={handleShow}
@@ -159,8 +170,7 @@ function Home() {
 
 export default Home;
 
-
-  /* Icons that when rotated 90 ° will be to modify the layout
+/* Icons that when rotated 90 ° will be to modify the layout
   <Button className="changeLayout" variant="link" size="lg">
     <i className="bi bi-layout-three-columns"></i>
     <i className="bi bi-layout-split"></i>

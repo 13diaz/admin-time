@@ -1,14 +1,9 @@
 .App {
-  padding: 3%;
   min-height: 100vh;
   text-align: center;
   font-size: calc(10px + 2vmin);
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.titleApp {
-  max-height: 10vh;
-  color: #02b875;
+  background-color: #ececec;
 }
