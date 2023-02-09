@@ -5,11 +5,12 @@
   justify-content: space-evenly;
   align-self: center;
   color: #02b875;
+  /* border: black solid 1px; */
 }
 
 .flex-container {
-  min-width: 60vmin;
-  max-width: 50vmax;
+  align-self: center;
+  min-width: 90%;
   display: flex;
   position: relative;
 }
@@ -18,10 +19,6 @@
   background: #fff;
   flex: 1 0 auto;
   border-radius: 50%;
-  /* border: black solid 1px; */
-  /* box-shadow: 3px 3px 13px 3px rgba(0, 0, 0, 0.1),
-    inset -13px 3px 13px 3px rgba(0, 0, 0, 0.1),
-    -13px 13px 13px 3px rgba(0, 0, 0, 0.1); */
   box-shadow: -10px 10px 15px rgba(255, 255, 255, 0.5),
     10px 10px 15px rgba(70, 70, 70, 0.12);
 }
@@ -47,12 +44,28 @@
   border-radius: 50%;
   color: #02b875;
   background-color: rgba(2, 184, 117, 0.08);
-  /* border: black solid 1px; */
   box-shadow: inset 0px 0px 13px 3px rgba(2, 184, 117, 0.061),
     0px -13px 13px 3px rgba(2, 184, 117, 0.061);
-
-  /* box-shadow: -10px 10px 15px rgba(255, 255, 255, 0.5),
-      10px 10px 15px rgba(70, 70, 70, 0.12); */
 }
 
-/* border: #02b875 solid 1px; */
+.buttonPlayStop {
+  align-self: center;
+  min-width: 90%;
+  padding: 1%;
+  border: none;
+  box-shadow: inset 0px 0px 50px 1px rgba(0, 0, 0, 0.1),
+  -1px -1px 3px 1px #fff,
+  1px 1px 1px 1px rgba(0, 0, 0, 0.3),
+  0px 0px 3px 3px rgba(0, 0, 0, 0.3),
+  13px 8px 22px 1px rgb(5, 54, 36, 0.3);
+}
+
+/* ESTA PUEDE SER LA CLASE CUANDO EL BOTON ESTE ACTIVADO */
+.buttonPlayStop:hover {
+  border: none;
+  box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.3),
+  -1px -1px 3px 1px rgba(0, 0, 0, 0.3),
+  1px 1px 1px 1px #fff,
+  0px 0px 3px 3px #fff,
+  13px 8px 22px 1px rgb(5, 54, 36, 0.1);
+}

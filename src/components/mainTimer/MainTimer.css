@@ -6,6 +6,11 @@
   font-size: xx-large;
 }
 
+.formControl::-webkit-outer-spin-button,
+.formControl::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .formControl {
   text-align: center;
   color: #02b875;

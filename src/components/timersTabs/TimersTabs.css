@@ -1,0 +1,27 @@
+.tabButton {
+  color: #02b875;
+  text-decoration: none;
+  background: #fff;
+  /* box-shadow: -10px 10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.15); */
+  border: none;
+  box-shadow: inset 0px 0px 50px 1px rgba(0, 0, 0, 0.1),
+  -1px -1px 3px 1px #fff,
+  1px 1px 1px 1px rgba(0, 0, 0, 0.3),
+  0px 0px 3px 3px rgba(0, 0, 0, 0.3),
+  13px 8px 22px 1px rgb(5, 54, 36, 0.3);
+}
+
+.tabButton:hover {
+  color: #02b875;
+  text-decoration: none;
+  background: #fff;
+  border: none;
+  box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.3),
+  -1px -1px 3px 1px rgba(0, 0, 0, 0.1),
+  1px 1px 1px 1px #fff,
+  0px 0px 3px 3px #fff,
+  13px 8px 22px 1px rgb(5, 54, 36, 0.3);
+}
+
+/* CREAR EL BOX SHADOW COMO EL DE DRILE */

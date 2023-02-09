@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 const MenuButton = () => {
   return (
-    <Button variant="link" className="button">
+    <Button variant="link" className="button tabButton">
       <i className="bi bi-three-dots-vertical"></i>
     </Button>
   );

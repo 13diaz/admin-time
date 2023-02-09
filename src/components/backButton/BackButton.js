@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const BackButton = () => {
   return (
-    <Button variant="link" className="button">
+    <Button variant="link" className="tabButton button">
       <Link to="/" className="labelButton">
         <i className="bi bi-arrow-left"></i>
       </Link>
