@@ -10,7 +10,7 @@
 
 .flex-container {
   align-self: center;
-  min-width: 90%;
+  width: 70vmin;
   display: flex;
   position: relative;
 }
@@ -68,4 +68,8 @@
   1px 1px 1px 1px #fff,
   0px 0px 3px 3px #fff,
   13px 8px 22px 1px rgb(5, 54, 36, 0.1);
+}
+
+.mainCirclesContainer {
+  position: relative;
 }

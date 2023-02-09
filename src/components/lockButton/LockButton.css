@@ -1,7 +1,7 @@
-.resetButton {
+.lockButton {
   position: absolute;
   bottom: 5%;
-  right: 5%;
+  left: 5%;
   font-size: xx-larger;
   border: none;
   background-color: #fff;
@@ -13,7 +13,7 @@
 }
 
 /* ESTA PUEDE SER LA CLASE CUANDO EL BOTON ESTE ACTIVADO */
-.resetButton:hover {
+.lockButton:hover {
   background: #fff;
   opacity: 1;
   border: none;
