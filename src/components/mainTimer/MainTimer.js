@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import { FormGroup } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useLocalStorage } from "../../utils/hooks/useLocalStorage";
 
 const MainTimer = () => {
   let { timerId } = useParams();

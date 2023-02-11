@@ -9,7 +9,7 @@ const LockButton = () => {
     <div className="lockButton-container">
       <div className="flex-item-button"></div>
       <Button variant="link" className="button lockButton">
-        <i class="bi bi-lock"></i>
+        <i className="bi bi-lock"></i>
       </Button>
     </div>
   );

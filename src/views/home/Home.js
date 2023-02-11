@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import HeaderApp from "../../components/headerApp/HeaderApp.js";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
@@ -10,7 +8,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./Home.css";
 import { useState } from "react";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useLocalStorage } from "../../utils/hooks/useLocalStorage";
 import ListTimersPreview from "../../components/listTimersPreview/ListTimersPreview";
 
 // refactor if needed in more components

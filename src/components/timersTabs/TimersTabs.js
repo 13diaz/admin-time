@@ -1,14 +1,22 @@
 import "./TimersTabs.css";
-// import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { useLocalStorage } from "../../utils/hooks/useLocalStorage";
 
 const TimersTabs = () => {
-  // SIMPLEMENTE CREAR BOTONES LINK QUE CAMBIEN EL PARAMETRO DE LA URL PARA CADA TIMER
+  const [timers] = useLocalStorage("timers", []);
+
+  // USAR LO GUARDADO DE REACTSTRAP DE CHECK BUTTON
+
   return (
-    <div className="timersTabs">
-      <Button variant="link" size="lg" className="tabButton">
-        <strong>Title Timer</strong>
-      </Button>
+    <div className="timersTabsBar">
+      {timers.map((timer) => (
+        <Button variant="link" size="lg" className="tabButton timerLinkButton" key={timer.id}>
+          <NavLink to={`/timersDetails/${timer.id}`} className="timerLink">
+            {timer.title}
+          </NavLink>
+        </Button>
+      ))}
     </div>
   );
 };
