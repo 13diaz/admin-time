@@ -1,12 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "./App.css";
+import styles from "./styles/main.module.scss";
 import RoutesApp from "./routes/RoutesApp";
-
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <RoutesApp />
     </div>
   );
