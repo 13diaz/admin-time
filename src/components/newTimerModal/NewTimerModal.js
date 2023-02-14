@@ -5,21 +5,12 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { useLocalStorage } from "../../utils/hooks/useLocalStorage";
 import NewTimerModalContext from "../../context/newTimerModal/NewTimerModalContext";
 
 const NewTimerModal = () => {
-  const { show, getHandle } = useContext(NewTimerModalContext);
-
-  useEffect(() => {
-    getHandle();
-  }, []);
-
-  // CLOSE MODAL function: necesita el context del set show
-  // const handleClose = () => setShow(false);// Para ejecutar este setShow crearlo en el context
-  const handleClose = () => getHandle();
-
+  const { show, closeModal } = useContext(NewTimerModalContext);
 
   const [timers, setTimers] = useLocalStorage("timers", []);
   const [titleTimer, setTitleTimer] = useState("");
@@ -47,13 +38,14 @@ const NewTimerModal = () => {
     setMinutesTimer("");
     setSecondsTimer("");
 
-    handleClose();
+    closeModal();
     e.preventDefault();
   };
+  
   return (
     <Modal
       show={show}
-      onHide={handleClose}
+      onHide={closeModal}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered

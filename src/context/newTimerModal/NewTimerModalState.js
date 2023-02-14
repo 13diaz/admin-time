@@ -7,21 +7,28 @@ const NewTimerModalState = (props) => {
     show: false,
   };
 
-  // EXAMPLE WITH USESTATE
-  // const [show, setShow] = useState(false);
-
   const [state, dispatch] = useReducer(NewTimerModalReducer, initialState);
 
-  const getHandle = () => {
-    // const res = timers;
-    console.log("res");
+  const showModal = () => {
+    dispatch({
+      type: "SHOW_MODAL",
+      payload: true,
+    });
+  };
+
+  const closeModal = () => {
+    dispatch({
+      type: "CLOSE_MODAL",
+      payload: false,
+    });
   };
 
   return (
     <NewTimerModalContext.Provider
       value={{
         show: state.show,
-        getHandle,
+        showModal,
+        closeModal,
       }}
     >
       {props.children}
