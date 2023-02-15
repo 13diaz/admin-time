@@ -5,14 +5,19 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { useState, useContext } from "react";
-import { useLocalStorage } from "../../utils/hooks/useLocalStorage";
+import { useContext, useEffect, useState } from "react";
+import TimerContext from "../../context/timer/TimerContext";
 import NewTimerModalContext from "../../context/newTimerModal/NewTimerModalContext";
 
 const NewTimerModal = () => {
   const { show, closeModal } = useContext(NewTimerModalContext);
 
-  const [timers, setTimers] = useLocalStorage("timers", []);
+  const { timers, getTimers, setTimers } = useContext(TimerContext);
+
+  useEffect(() => {
+    getTimers();
+  }, [timers]);
+
   const [titleTimer, setTitleTimer] = useState("");
   const [hoursTimer, setHoursTimer] = useState("");
   const [minutesTimer, setMinutesTimer] = useState("");
@@ -38,10 +43,10 @@ const NewTimerModal = () => {
     setMinutesTimer("");
     setSecondsTimer("");
 
-    closeModal();
     e.preventDefault();
+    closeModal();
   };
-  
+
   return (
     <Modal
       show={show}
