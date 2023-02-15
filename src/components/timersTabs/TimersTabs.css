@@ -1,0 +1,70 @@
+.tabButton {
+  color: #02b875;
+  text-decoration: none;
+  background: #fff;
+  border: none;
+  box-shadow: inset 0px 0px 50px 1px rgba(0, 0, 0, 0.1),
+  -1px -1px 3px 1px #fff,
+  1px 1px 1px 1px rgba(0, 0, 0, 0.3),
+  0px 0px 3px 3px rgba(0, 0, 0, 0.3),
+  13px 8px 22px 1px rgb(5, 54, 36, 0.3);
+}
+
+.tabButton:hover {
+  color: #02b875;
+  text-decoration: none;
+  background: #fff;
+  opacity: 1;
+  border: none;
+  box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.3),
+  -1px -1px 3px 1px rgba(0, 0, 0, 0.1),
+  1px 1px 1px 1px #fff,
+  0px 0px 3px 3px #fff,
+  13px 8px 22px 1px rgb(5, 54, 36, 0.1);
+}
+
+.timersTabsBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.timerLink{
+  text-decoration: none;
+  color: #02b875;
+}
+
+@media only screen and (min-width: 30px) 
+    and (max-width: 641px){
+      .timersTabsBar {
+        padding: 13% 0%;
+      }
+
+      .timerLinkButton {
+        margin: 0% 3%;
+      }
+}
+
+@media only screen and (min-width: 641px) 
+    and (max-width: 961px){
+      .timersTabsBar {
+        padding: 3% 0%;
+      }
+
+      .timerLinkButton {
+        margin: 0% 1%;
+      }
+}
+
+@media only screen and (min-width: 961px) 
+    /* and (max-width: 1081px) */
+{
+      .timersTabsBar {
+        padding: 2% 0%;
+      }
+
+      .timerLinkButton {
+        margin: 0% 1%;
+      }
+}

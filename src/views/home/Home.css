@@ -1,0 +1,136 @@
+  /* border: 1px solid rgb(242, 255, 0); */
+  /* border: 1px solid blue; */
+  /* border: 1px solid red; */
+
+.main {
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid #02b875;
+  border-radius: 2%;
+  overflow: auto;
+}
+
+
+/* BUTTON FOR CREATE A NEW TIMER */
+.createTimerButton {
+  margin: 0% auto;
+  padding: 0% auto;
+  font-size: xx-large;
+  text-decoration: none;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  border: none;
+  box-shadow: inset 0px 0px 50px 1px rgba(0, 0, 0, 0.1),
+  -1px -1px 3px 1px #fff,
+  1px 1px 1px 1px rgba(0, 0, 0, 0.3),
+  0px 0px 3px 3px rgba(0, 0, 0, 0.3),
+  13px 8px 22px 1px rgb(5, 54, 36, 0.3);
+}
+
+.createTimerButton:hover {
+  opacity: 1;
+  border: none;
+  box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.3),
+  -1px -1px 3px 1px rgba(0, 0, 0, 0.1),
+  1px 1px 1px 1px #fff,
+  0px 0px 3px 3px #fff,
+  13px 8px 22px 1px rgb(5, 54, 36, 0.1);
+}
+
+/* MODAL FOR CONFIGURATE NEW TIMER */
+
+.headerModalTimerConfig {
+  margin: 0%;
+  padding: 0% 5% 0% 1%;
+}
+
+.modalTitle {
+  padding: 0%;
+  margin: 0% 3% 0% 0%;
+  width: 100%;
+}
+
+.inputTimerTitle {
+  margin: 0%;
+  padding: 1% 0%;
+}
+
+.bodyModalTimerConfig {
+  margin: 0%;
+  padding: 0% 3%;
+}
+
+.subtitleTimerConfig {
+  font-size: larger;
+  min-width: 100%;
+  text-align: center;
+}
+
+.rowTimerInputs {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.colSecondsInput {
+  margin: 0%;
+  padding: 1% 0%;
+  width: 50%;
+}
+
+.footerModalTimerConfig {
+  margin: 0%;
+  padding: 0%;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rowFooter {
+  margin: 0%;
+  padding: 0%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.colTextFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0%;
+  padding: 1% 1% 0% 1%;
+}
+
+.colSaveButtonFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0%;
+  padding: 1%;
+}
+
+.saveTimerButton {
+  border: none;
+  box-shadow: inset 0px 0px 50px 1px rgba(0, 0, 0, 0.1),
+  -1px -1px 3px 1px #fff,
+  1px 1px 1px 1px rgba(0, 0, 0, 0.3),
+  0px 0px 3px 3px rgba(0, 0, 0, 0.3),
+  13px 8px 22px 1px rgb(5, 54, 36, 0.3);
+}
+
+.saveTimerButton:hover {
+  opacity: 1;
+  border: none;
+  box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.3),
+  -1px -1px 3px 1px rgba(0, 0, 0, 0.1),
+  1px 1px 1px 1px #fff,
+  0px 0px 3px 3px #fff,
+  13px 8px 22px 1px rgb(5, 54, 36, 0.1);
+}

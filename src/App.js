@@ -1,17 +1,12 @@
-import "./App.css";
-import Home from "./pages/Home/Home.js";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import styles from "./styles/main.module.scss";
+import RoutesApp from "./routes/RoutesApp";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Admin Time App</h1>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+    <div className={styles.App}>
+      <RoutesApp />
     </div>
   );
 }

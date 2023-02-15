@@ -1,0 +1,12 @@
+@import "./modernNormalize";
+
+.App {
+  min-height: 100vh;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // background-color: #ececec;
+  background-color: #000;
+}
