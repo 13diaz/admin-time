@@ -1,38 +1,43 @@
 import "./MainTimer.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import Form from "react-bootstrap/Form";
 import { FormGroup } from "react-bootstrap";
+
+// CONTEXT
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { useLocalStorage } from "../../utils/hooks/useLocalStorage";
+import { useContext, useEffect } from "react";
+import TimerContext from "../../context/timer/TimerContext";
+import { useNavigate } from "react-router-dom";
 
 const MainTimer = () => {
   let { timerId } = useParams();
-  let newTimerId = parseInt(timerId);
-  const [timers, setTimers] = useLocalStorage("timers", []);
-  // CREAR METODO PARA GUARDAR LOS CAMBIOS QUE SE HAGAN DESDE EL MAIN TIMER A EL localStorage
 
+  const {
+    selectedTimer,
+    getSelectedTimer,
+    setHoursSelectedTimers,
+    setMinutesSelectedTimers,
+    setSecondsSelectedTimers,
+  } = useContext(TimerContext);
+
+  // CREAR METODO PARA GUARDAR LOS CAMBIOS QUE SE HAGAN DESDE EL MAIN TIMER A EL localStorage
   // PARA ESTO CREAR UNA FUNCION QUE SE EJECUTE EN EL ONCHANGE DE LOS INPUTS QUE TOME EL ID DEL TIMER ACTUAL Y GUARDE LO MODIFICADO POR EJEMPLO EL TITLE TENIENDO EN CUENTA LA EXTRUCTURA E INDICE DEL OBJETO TIMERS, PARA ESTO ULTIMO PROBA SEPARAR EL ARRAY TIMERS DEL localStorage O CADA VEZ QUE SE HAGA UN SETTIMERS SE ENVIEN TODOS LOS INPUTS DEL MAINTIMER, BUSCAR MEJOR SOLUCION
+  // PARA FINALIZAR ESTO TOMAR EL SELECTED TIMER ACTUALIZARLO EN EL CONTEXTO Y YA DESDE ALLI MANDARLO TAMBIEN AL LOCAL STORAGE CON EL HOOK DEL TIMER STATE, PERO ANTES DE ESO CREAR LOS METODOS PARA MANEJAR LOS INPUTS DE MANERA CONTROLADA ES DECIR PROBAR A CAMBIAR LOS METODOS QUE ESTAN EL FORMULARIO POR METODOS QUE VALLAN DIRECTO AL CONTEXTO DE SELECTEDTIMER Y LO ACTUALICEN DIRECTAMENTE
+
+  /* CREAR ESTO DEL COMMENT PARA CONTINUAR REVISAR ESTOS ARCHIVOS EN ESTE ORDEN:
+  - TIMER STATE
+  - TIMER REDUCER 
+  - ESTE ARCHIVO */
+
+  let navigate = useNavigate();
 
   useEffect(() => {
-    const currentTimer = timers.find((timer) => {
-      if (timer.id === newTimerId) {
-        return timer; // stop searching
-      }
-    });
-    setTitleTimer(currentTimer.title);
-    setHoursTimer(currentTimer.hours);
-    setMinutesTimer(currentTimer.minutes);
-    setSecondsTimer(currentTimer.seconds);
+    getSelectedTimer(timerId);
+    // REDIRECTION FOR INVALID PARAM FOR THE URL AND UNREGISTERED TIMER
+    if (selectedTimer.existence === false) {
+      navigate("/notFound:" + timerId);
+    }
   }, []);
 
-  const [titleTimer, setTitleTimer] = useState("");
-  const [hoursTimer, setHoursTimer] = useState("");
-  const [minutesTimer, setMinutesTimer] = useState("");
-  const [secondsTimer, setSecondsTimer] = useState("");
-
-  /* AQUI PONER LOS INPUTS DE LOS CONTADORES ACTUALES, PARA VISUALIZARLOS Y PODER MODIFICARLOS, ES DECIR PONER LOS INPUTS TAL CUAL COMO SE MUESTRAN PARA LA CREACION PERMITIENDO LO ANTERIORMENTE MENCIONADO,PERO , TENIENDO EN CUENTA ALGUNA PRECAUCION POR SI ACASO OCASIONARA ALGUN ERROR */
   return (
     <FormGroup role="form" className="formGroup">
       <Form.Control
@@ -42,8 +47,8 @@ const MainTimer = () => {
         placeholder="00"
         aria-label="timerHours"
         aria-describedby="timerHours"
-        value={hoursTimer}
-        onChange={(e) => setHoursTimer(e.target.value)}
+        value={selectedTimer.hours}
+        onChange={(e) => setHoursSelectedTimers(e.target.value)}
         className="formControl"
       />
       :
@@ -54,8 +59,8 @@ const MainTimer = () => {
         placeholder="00"
         aria-label="timerMinutes"
         aria-describedby="timerMinutes"
-        value={minutesTimer}
-        onChange={(e) => setMinutesTimer(e.target.value)}
+        value={selectedTimer.minutes}
+        onChange={(e) => setMinutesSelectedTimers(e.target.value)}
         className="formControl"
       />
       :
@@ -66,8 +71,8 @@ const MainTimer = () => {
         placeholder="00"
         aria-label="timerSeconds"
         aria-describedby="timerSeconds"
-        value={secondsTimer}
-        onChange={(e) => setSecondsTimer(e.target.value)}
+        value={selectedTimer.seconds}
+        onChange={(e) => setSecondsSelectedTimers(e.target.value)}
         className="formControl"
       />
     </FormGroup>

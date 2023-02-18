@@ -9,7 +9,7 @@ const ListTimersPreview = () => {
 
   useEffect(() => {
     getTimers();
-  }, [timers]);
+  }, []);
 
   // HERE WILL HAVE A COMPONENT TO SHOW THAT HAVE NOT TIMERS YET
   if (!timers || timers.length === 0) {

@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import ResetButton from "../../components/resetButton/ResetButton";
 import LockButton from "../../components/lockButton/LockButton";
 
-
 const TimersDetails = () => {
   return (
     <div>

@@ -19,7 +19,14 @@ const RoutesApp = () => {
             </TimerState>
           }
         />
-        <Route path="/timersDetails/:timerId" element={<TimersDetails />} />
+        <Route
+          path="/timersDetails/:timerId"
+          element={
+            <TimerState>
+              <TimersDetails />
+            </TimerState>
+          }
+        />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

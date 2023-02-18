@@ -26,7 +26,7 @@ const NewTimerModal = () => {
   const saveTimer = (e) => {
     const newIdTimer =
       timers.length === 0 ? 1 : timers[timers.length - 1].id + 1;
-    const newTitleTimer = parseInt(titleTimer) || "Timer" + newIdTimer;
+    const newTitleTimer = titleTimer || "Timer" + newIdTimer;
     const newHoursTimer = parseInt(hoursTimer) || "00";
     const newMinutesTimer = parseInt(minutesTimer) || "00";
     const newSecondsTimer = parseInt(secondsTimer) || "00";

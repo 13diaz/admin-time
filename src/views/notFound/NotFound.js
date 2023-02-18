@@ -6,7 +6,10 @@ const NotFound = () => {
     <>
       <HeaderApp />
       <div>NotFound</div>
+      {/* MY STYLE BUTTON */}
       <input type="checkbox" />
+      {/* SIMPLE BUTTON */}
+      {/* <a href="#"><span>Button</span></a> */}
     </>
   );
 };
