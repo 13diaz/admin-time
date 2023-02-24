@@ -1,10 +1,10 @@
+import styles from "./NewTimerModal.module.scss";
+import mainStyles from "../../styles/main.module.scss";
 import { FormGroup } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import { useContext, useEffect, useState } from "react";
 import TimerContext from "../../context/timer/TimerContext";
 import NewTimerModalContext from "../../context/newTimerModal/NewTimerModalContext";
@@ -54,17 +54,17 @@ const NewTimerModal = () => {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className={styles.modalTimerConfig}
     >
       <Form onSubmit={saveTimer}>
-        <Modal.Header closeButton className="headerModalTimerConfig">
-          <Modal.Title className="modalTitle">
+        <Modal.Header closeButton>
+          <Modal.Title>
             <FormGroup role="form">
               <Form.Control
                 type="text"
                 autoFocus
                 plaintext
                 placeholder="Timer Title"
-                className="inputTimerTitle"
                 value={titleTimer}
                 onChange={(e) => {
                   setTitleTimer(e.target.value);
@@ -74,74 +74,68 @@ const NewTimerModal = () => {
             </FormGroup>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="bodyModalTimerConfig">
-          <Form.Label className="subtitleTimerConfig">
+        <Modal.Body className={styles.modalTimerConfig_body}>
+          <Form.Label>
             Here config your timer
           </Form.Label>
-          <Row className="rowTimerInputs">
-            <Col sm={12}>
-              <FormGroup role="form">
-                <InputGroup>
-                  <Form.Control
-                    type="number"
-                    max="9999"
-                    placeholder="00"
-                    aria-label="timerHours"
-                    aria-describedby="timerHours"
-                    value={hoursTimer}
-                    onChange={(e) => setHoursTimer(e.target.value)}
-                  />
-                  <InputGroup.Text id="timerHours">Hrs</InputGroup.Text>
-                  <Form.Control
-                    type="number"
-                    max="9999"
-                    placeholder="00"
-                    aria-label="timerMinutes"
-                    aria-describedby="timerMinutes"
-                    value={minutesTimer}
-                    onChange={(e) => setMinutesTimer(e.target.value)}
-                  />
-                  <InputGroup.Text id="timerMinutes">Min</InputGroup.Text>
-                </InputGroup>
-              </FormGroup>
-            </Col>
-            <Col sm={4} className="colSecondsInput">
-              <FormGroup role="form">
-                <InputGroup>
-                  <Form.Control
-                    type="number"
-                    max="9999"
-                    placeholder="00"
-                    aria-label="timerSeconds"
-                    aria-describedby="timerSeconds"
-                    value={secondsTimer}
-                    onChange={(e) => setSecondsTimer(e.target.value)}
-                  />
-                  <InputGroup.Text id="timerSeconds">Sec</InputGroup.Text>
-                </InputGroup>
-              </FormGroup>
-            </Col>
-          </Row>
+          <FormGroup role="form" className={styles.modalTimerConfig_body_inputsContainer}>
+            <InputGroup className={styles.modalTimerConfig_body_inputsContainer_input}>
+              <Form.Control
+                type="number"
+                max="9999"
+                placeholder="00"
+                aria-label="timerHours"
+                aria-describedby="timerHours"
+                value={hoursTimer}
+                onChange={(e) => setHoursTimer(e.target.value)}
+              />
+              <InputGroup.Text id="timerHours">H</InputGroup.Text>
+            </InputGroup>
+            <InputGroup className={styles.modalTimerConfig_body_inputsContainer_input}>
+              <Form.Control
+                type="number"
+                max="9999"
+                placeholder="00"
+                aria-label="timerMinutes"
+                aria-describedby="timerMinutes"
+                value={minutesTimer}
+                onChange={(e) => setMinutesTimer(e.target.value)}
+              />
+              <InputGroup.Text>M</InputGroup.Text>
+            </InputGroup>
+            <InputGroup
+              className={styles.modalTimerConfig_body_inputsContainer_input}
+            >
+              <Form.Control
+                type="number"
+                max="9999"
+                placeholder="00"
+                aria-label="timerSeconds"
+                aria-describedby="timerSeconds"
+                value={secondsTimer}
+                onChange={(e) => setSecondsTimer(e.target.value)}
+              />
+              <InputGroup.Text>S</InputGroup.Text>
+            </InputGroup>
+          </FormGroup>
         </Modal.Body>
-        <Modal.Footer className="footerModalTimerConfig">
-          <Row className="rowFooter">
-            <Col sm={10} className="colTextFooter">
-              <p className="text-muted textFooter">
-                You can go back in this configuration
-              </p>
-            </Col>
-            <Col sm={2} className="colSaveButtonFooter">
-              <FormGroup role="form">
-                <Button
-                  type="submit"
-                  variant="success"
-                  className="saveTimerButton"
-                >
-                  Save
-                </Button>
-              </FormGroup>
-            </Col>
-          </Row>
+        <Modal.Footer className={styles.modalTimerConfig_footer}>
+          <div className="text-muted">
+            You can go back in this configuration
+          </div>
+          <FormGroup
+            role="form"
+            className={styles.modalTimerConfig_footer_saveButtonContainer}
+          >
+            <Button
+              type="submit"
+              variant="success"
+              size="lg"
+              className={mainStyles.specialButton}
+            >
+              Save
+            </Button>
+          </FormGroup>
         </Modal.Footer>
       </Form>
     </Modal>

@@ -1,13 +1,25 @@
+// RESET DEFAULT STYLES SETTINGS OF THE BROWSERS
 @import "./modernNormalize";
 
+// FONT FAMILY IMPORTED FOR REGULAR TEXTS
+@font-face {
+  font-family: Aileron-Regular;
+  src: url("../fonts/Aileron-Regular.otf");
+}
+
+// FONT FAMILY FOR TITLES AND STRONG TEXTS
+@font-face {
+  font-family: Aileron-HeavyItalic;
+  src: url("../fonts/Aileron-HeavyItalic.otf");
+}
+
+// DEFAULT CONFIGURATION FOR ALL VIEWS OR PAGES
 .App {
-  min-height: 100vh;
   text-align: center;
+  font-family: Aileron-Regular;
   font-size: calc(10px + 2vmin);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  // background-color: #ececec;
-  background-color: #000;
+  height: 100vh;
+  background-color: #ececec;
+  // background-color: #000;
   // background-color: #f2f3f7;
 }

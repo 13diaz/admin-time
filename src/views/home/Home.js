@@ -1,4 +1,5 @@
-import "./Home.css";
+import styles from "./Home.module.scss";
+import mainStyles from "../../styles/main.module.scss";
 import Button from "react-bootstrap/Button";
 import HeaderApp from "../../components/headerApp/HeaderApp.js";
 import { useContext } from "react";
@@ -6,18 +7,18 @@ import ListTimersPreview from "../../components/listTimersPreview/ListTimersPrev
 import NewTimerModalContext from "../../context/newTimerModal/NewTimerModalContext";
 import NewTimerModal from "../../components/newTimerModal/NewTimerModal.js";
 
-// refactor in more components AND USE CSS GRID FOR CHANGE REACSTRAP AND FLEXBOX OF ALL COMPONENTS FOR IMPROVE EFICENT
 function Home() {
   const { showModal } = useContext(NewTimerModalContext);
 
   return (
-    <div className="main">
+    <div className={styles.home}>
       <HeaderApp />
-      <ListTimersPreview />
-      {/* Button for create new timer */}
+      <div className={styles.home_main}>
+        <ListTimersPreview />
+      </div>
       <Button
         onClick={showModal}
-        className="createTimerButton"
+        className={`${styles.home_createTimerButton} ${mainStyles.specialButton}`}
         variant="success"
         size="lg"
       >

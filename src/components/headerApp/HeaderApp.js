@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import "./HeaderApp.css";
+import styles from "./HeaderApp.module.scss";
 
 const HeaderApp = () => {
   return (
-    <Link className="titleApp" to="/">
+    <Link className={styles.titleApp} to="/">
       <h1>Admin Time App</h1>
     </Link>
   );

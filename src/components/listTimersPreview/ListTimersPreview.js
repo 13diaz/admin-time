@@ -1,5 +1,5 @@
 import ListGroup from "react-bootstrap/ListGroup";
-import "./ListTimersPreview.css";
+import styles from "./ListTimersPreview.module.scss";
 import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import TimerContext from "../../context/timer/TimerContext";
@@ -14,7 +14,7 @@ const ListTimersPreview = () => {
   // HERE WILL HAVE A COMPONENT TO SHOW THAT HAVE NOT TIMERS YET
   if (!timers || timers.length === 0) {
     return (
-      <ListGroup className="listTimersPreview">
+      <ListGroup>
         <h1>You don't have timers yet</h1>
       </ListGroup>
     );
@@ -24,18 +24,18 @@ const ListTimersPreview = () => {
     const contentList = timers.map((timer) => (
       <Link
         to={`/timersDetails/${timer.id}`}
-        className="timerLink"
+        className={styles.timerLink}
         key={timer.id}
       >
-        <ListGroup.Item className="listItem">
-          <p className="titleTimer">{timer.title}</p>
-          <p className="timerPreview">
+        <ListGroup.Item className={styles.timerLink_listItem}>
+          <div className={styles.timerLink_listItem_title}>{timer.title}</div>
+          <div className={styles.timerLink_listItem_timerPreview}>
             {timer.hours} : {timer.minutes} : {timer.seconds}
-          </p>
+          </div>
         </ListGroup.Item>
       </Link>
     ));
-    return <ListGroup className="listTimersPreview">{contentList}</ListGroup>;
+    return <ListGroup>{contentList}</ListGroup>;
   }
 };
 

@@ -1,0 +1,48 @@
+.modalTimerConfig {
+  text-align: center;
+}
+
+.modalTimerConfig_body {
+  margin: 0em 0em 1em 0em;
+}
+
+.modalTimerConfig_body_inputsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  // display: grid;
+  // grid-template-columns: repeat(2 ,1fr);
+  // // grid-auto-rows: 100%;
+  // grid-template-rows: 50% 50%;
+  // gap: 1em;
+
+  // .modalTimerConfig_body_inputsContainer_input_s {
+  //   grid-column: 1/3;
+  // }
+}
+
+.modalTimerConfig_body_inputsContainer_input {
+  max-width: 50vmin;
+  padding: 1em;
+}
+
+@media (max-width: 575px) {
+  .modalTimerConfig_body_inputsContainer_input {
+    max-width: 80vmin;
+  }
+}
+
+// FOOTER
+.modalTimerConfig_footer {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.modalTimerConfig_footer_saveButtonContainer {
+  padding: 3%;
+}

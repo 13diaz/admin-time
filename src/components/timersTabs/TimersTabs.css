@@ -11,6 +11,7 @@
 }
 
 .tabButton:hover {
+  transform: scale(0.95);
   color: #02b875;
   text-decoration: none;
   background: #fff;

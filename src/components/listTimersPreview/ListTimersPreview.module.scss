@@ -1,28 +1,28 @@
-.listItem {
+.timerLink {
+  text-decoration: none;
+}
+
+.timerLink:hover {
+  color: #02b875;
+}
+
+.timerLink_listItem {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.listItem:hover {
+.timerLink_listItem:hover {
   background-color: rgb(238, 229, 229);
   opacity: 1;
 }
 
-.timerLink{
-  text-decoration: none;
-}
-
-.timerLink:hover{
-  color: #02b875;
-}
-
-.titleTimer {
+.timerLink_listItem_title {
   font-size: larger;
   margin: 0%;
 }
 
-.timerPreview {
+.timerLink_listItem_timerPreview {
   margin: 0%;
   padding: 0% 1%;
 }

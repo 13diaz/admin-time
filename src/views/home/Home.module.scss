@@ -1,0 +1,35 @@
+.home {
+  padding: 1em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #02b875 solid 2px;
+}
+
+// INTENTAR PERSONALIZAR LA BARRA DE SCROLL
+.home_main{
+  // INTENTAR PERFECCIONAR LOS BORDES DEL LISTOFTIEMRS
+  // border-radius: 3%;
+  border: 1px solid #02b875;
+  max-height: 90%;
+  width: 100%;
+  overflow: auto;
+}
+
+@media (min-width: 575px) {
+  .home_main {
+    width: 90vmin;
+  }
+}
+
+/* BUTTON FOR CREATE A NEW TIMER */
+.home_createTimerButton {
+  margin: 0% auto;
+  padding: 0% auto;
+  font-size: xx-large;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+}

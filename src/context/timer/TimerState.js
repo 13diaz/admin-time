@@ -1,9 +1,9 @@
-// REUQUIRED FOR CONTEXT STATE
+// REQUIRED FOR CONTEXT STATE
 import { useReducer } from "react";
 import TimerReducer from "./TimerReducer";
 import TimerContext from "./TimerContext";
 
-// REQUIRED FOR ADITIONAL PROCESS
+// REQUIRED FOR ADDITIONAL PROCESS
 import { useLocalStorage } from "../../utils/hooks/useLocalStorage";
 
 const TimerState = (props) => {
@@ -22,7 +22,7 @@ const TimerState = (props) => {
   };
 
   const [state, dispatch] = useReducer(TimerReducer, initialState);
-  // CREAR UNOS METODOS O UNA FORMA PARA ENVIAR EL ID O UN ARRAY CON LOS IDS DE LOS CONTADOR QUE SE QUIERAN MODIFICAR Y GUARDAR LOS CAMBIOS
+  // CREAR UNOS MÉTODOS O UNA FORMA PARA ENVIAR EL ID O UN ARRAY CON LOS IDS DE LOS CONTADOR QUE SE QUIERAN MODIFICAR Y GUARDAR LOS CAMBIOS
   const [storagedTimers, setStoragedTimers] = useLocalStorage("timers", []);
 
   const setTimers = (newTimersArray) => {

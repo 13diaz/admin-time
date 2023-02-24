@@ -52,19 +52,14 @@
   align-self: center;
   min-width: 90%;
   padding: 1%;
-  border: none;
-  box-shadow: inset 0px 0px 50px 1px rgba(0, 0, 0, 0.1),
-  -1px -1px 3px 1px #fff,
-  1px 1px 1px 1px rgba(0, 0, 0, 0.3),
-  0px 0px 3px 3px rgba(0, 0, 0, 0.3),
-  13px 8px 22px 1px rgb(5, 54, 36, 0.3);
 }
 
 /* ESTA PUEDE SER LA CLASE CUANDO EL BOTON ESTE ACTIVADO */
 .buttonPlayStop:hover {
+  transform: scale(0.95);
   border: none;
   box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.3),
-  -1px -1px 3px 1px rgba(0, 0, 0, 0.3),
+  -1px -1px 3px 1px rgba(0, 0, 0, 0.1),
   1px 1px 1px 1px #fff,
   0px 0px 3px 3px #fff,
   13px 8px 22px 1px rgb(5, 54, 36, 0.1);
